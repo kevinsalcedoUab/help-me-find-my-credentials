@@ -1,23 +1,35 @@
-# Phaser 3 Examples
+# Help me find my SSH credentials
 
-All of the code in this repo can be browsed at [http://labs.phaser.io](http://labs.phaser.io). The labs site is a mirror of this repo and changes made in the repo are synced to the site within minutes.
+We have a problem. Our devops cowoer messed up a little the information about our credentials to connect to the production server.
 
-You can also clone this repo to have the code locally for testing, which can be really useful while developing with Phaser 3.
+He veguely rememebers some clues that may help us to find our way to connect to the remote server in Amazon Web Services.
 
-## Dev Version vs. Release Version
+## Objective
 
-By default the examples site is configured to serve the latest dev version of Phaser 3. We are continuously working on it, which means new builds are pushed often several times per day. Use the drop-down menu below the example to run it against any previous release version. You should see the URL change to reflect the version within it.
+We should be able to retrieve two pieces of information
 
-### Requirements
+1. We need to discover which is our username in the remote server
+2. We need to figure out which [PEM file](https://s3.amazonaws.com/smhelpcenter/smhelp941/classic/Content/security/concepts/what_are_pem_files.htm) do we need to use to connect to our server 
 
-If you want to run our scripts then you need [Node.js](https://nodejs.org)  installed.
+```
+ssh -i "correct-certificate-file.pem" correct-username@ec2-35-181-5-201.eu-west-3.compute.amazonaws.com
+```
 
-To show the example browser run these commands in your terminal:
+Once you are able to connect, you should be able to see:
 
-| Command | Description |
-|---------|-------------|
-| `npm install` | Install dependencies and launch browser with examples.|
-| `npm start` | Launch browser to show the examples. <br> Press `Ctrl + c` to kill **http-server** process. |
-| `npm run update` | To build a new `examples.json` file if you add a new example. |
+<img src="https://oscarm.tinytake.com/media/fa5eb0?filename=1617172318207_TinyTake31-03-2021-08-31-00_637527691184865337.png&sub_type=thumbnail_preview&type=attachment&width=669&height=154" title="Powered by TinyTake Screen Capture"/><br><a href="https://www.tinytake.com">Powered by TinyTake Screen Capture</a>
 
-Alternatively, if you have your own local web server installed, you could configure it to serve the `/public` folder from the repo and you will get access to the examples interface.
+## Username
+
+Bob, our devop coworker, remebers that our "corrrect-username" is somewhere in a TXT file in this folder or subfolders. Maybe a terminal command could help us to search for all these types of files. He also mentions that the name of the file is in a beautiful language. We think we may have to look inside the file using a command in order to filter the text lines to find our username.
+
+BONUS: Which is the novel that this TXT file contains?
+
+## PEM file
+
+Again, Bob does not remember where is the correct PEM file. "Somewhere in this folder!" - he says. Not very helpful. He also mentions that:
+
+* Ineed, it MUST be a PEM file
+* If you find more that one PEM file, I think that the correct one is about 2K size.
+
+
