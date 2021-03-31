@@ -15,6 +15,8 @@ We should be able to retrieve two pieces of information
 ssh -i "correct-certificate-file.pem" correct-username@ec2-35-181-5-201.eu-west-3.compute.amazonaws.com
 ```
 
+To prove that you were able to connect, create a txt file with your name.
+
 Once you are able to connect, you should be able to see:
 
 <img src="https://oscarm.tinytake.com/media/fa5eb0?filename=1617172318207_TinyTake31-03-2021-08-31-00_637527691184865337.png&sub_type=thumbnail_preview&type=attachment&width=669&height=154" title="Powered by TinyTake Screen Capture"/><br><a href="https://www.tinytake.com">Powered by TinyTake Screen Capture</a>
